@@ -1,27 +1,27 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title class="ion-text-center">Login</ion-title>
-  </ion-toolbar>
+ 
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
   <div class="login-container">
+    <ion-img src="assets/images/1.png" class="login-logo"></ion-img> <!-- Logo centrado -->
+    
     <ion-list>
       <ion-item>
-        <ion-icon slot="start" name="person-outline"></ion-icon>
-        <ion-input [(ngModel)]="user"  label="Email" labelPlacement="floating" placeholder="Enter your email" type="email">
+        <ion-icon slot="start" name="person-outline" class="login-icon"></ion-icon>
+        <ion-input [(ngModel)]="user" label="Email" labelPlacement="floating" placeholder="Enter your email" type="email">
         </ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+        <ion-icon slot="start" name="lock-closed-outline" class="login-icon"></ion-icon>
         <ion-input [(ngModel)]="pass" type="password" label="Password" labelPlacement="floating" placeholder="Enter your password">
           <ion-input-password-toggle slot="end"></ion-input-password-toggle>
         </ion-input>
       </ion-item>
     </ion-list>
 
-    <ion-button (click)="login()" expand="block" class="ion-margin-top">Login</ion-button>
+    <ion-button (click)="login()" expand="block" class="ion-margin-top login-button">Login</ion-button>
 
     <ion-text class="ion-text-center ion-margin-top">
       <a href="/forgot-password">Forgot your password?</a>
@@ -29,31 +29,53 @@
   </div>
 </ion-content>
 
-<!-- Añade este CSS al archivo de estilos para personalizar la apariencia -->
 <style>
   .login-container {
     max-width: 400px;
     margin: auto;
     padding: 2rem 1rem;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .login-logo {
+    width: 250px;  /* Aumenta el tamaño de la imagen */
+    height: 250px;  /* Aumenta el tamaño de la imagen */
+    margin: 0 auto 2rem auto; /* Centra y ajusta el margen inferior */
+  }
+
+  ion-item {
+    --inner-padding-start: 1rem;
+    --inner-padding-end: 1rem;
+  }
+
+  .login-icon {
+    color: #6c757d;
+    font-size: 1.2rem;
+  }
+
+  .login-button {
+    --background: #8C309B;
+    --background-focused: #8C309B;
+    --background-hover: #8C309B;
+    --background-activated: #8C309B;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-
-  ion-input {
-    --padding-start: 1rem;
-  }
-
-  ion-button {
-    --background: #3880ff;
   }
 
   ion-text a {
-    color: #3880ff;
+    color: #6f42c1;
     text-decoration: none;
   }
 
   ion-text a:hover {
     text-decoration: underline;
+  }
+
+  @media (min-width: 768px) {
+    .login-container {
+      padding: 3rem 2rem;
+    }
   }
 </style>

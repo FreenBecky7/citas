@@ -72,8 +72,8 @@ export class IndexPage implements OnInit {
           this.citas.push(cita);
           this.highlightedDates.push({
             date: `${cita.attributes.appointment[0]}`,
-            textColor: '#200678',
-            backgroundColor: '#aac87b',
+            textColor: '#fff',
+            backgroundColor: '#8C309B',
           });
         });
       },
